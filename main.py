@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
+webhook_url = "your url"
+
 app = Flask(__name__)
     
 
@@ -26,7 +28,7 @@ def home():
         else:
           guidelines = "No"
       
-        webhook = DiscordWebhook(url='https://discord.com/api/webhooks/1096090761575018587/iNNmDj8pQlwaAq-7CxbBaLRu_nEkJOVNJaUJo_4Fh5Co6nLlDnr-2Qt8UTrAaXUQonj9')
+        webhook = DiscordWebhook(url=webhook_url)
         
         # create embed object for webhook
         embed = DiscordEmbed(title='Form Submission', color='03b2f8')
